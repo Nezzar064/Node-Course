@@ -19,10 +19,14 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.get('/', (req, res) => {
-    res.sendFile(__dirname + "/public/views/index.html");
+    if(process.env.PORT) {
+        res.sendFile(__dirname + "/public/views/heroku_index.html");
+    } else {
+        res.sendFile(__dirname + "/public/views/index.html");
+    }
 });
 
-app.get('/time/:city', (req, res) => {
+app.get('/api/time/:city', (req, res) => {
 
     let timeZone = '';
     switch (req.params.city) {
@@ -50,7 +54,7 @@ app.get('/time/:city', (req, res) => {
         });
 });
 
-app.get('/time/coordinates/:coordinates', (req, res) => {
+app.get('/api/time/coordinates/:coordinates', (req, res) => {
     console.log(req.params.coordinates);
     const splitString = req.params.coordinates.split('_');
     const latitude = splitString[0];
@@ -69,7 +73,7 @@ app.get('/time/coordinates/:coordinates', (req, res) => {
 });
 
 // set port
-const PORT = process.env.SERVER_PORT || 8080;
+const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}.`);
 });
