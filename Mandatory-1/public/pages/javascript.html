@@ -1,0 +1,291 @@
+<div class="pt-5">
+    <section class="section">
+        <div class="container">
+            <h1 class="title">JavaScript</h1>
+            <div class="columns">
+                <div class="column is-half">
+                    <div class="block">
+                        <h2 class="subtitle">
+                            <strong>Variables</strong>
+                        </h2>
+                    </div>
+                    <div class="block">
+                    <p>Variables in JS can be declared in 4 ways:
+                    </p>
+                    <pre><code>
+                        //Using var
+                        var variable;
+                        //Using let
+                        let variable;
+                        //Using const
+                        const variable;
+                        //Using nothing
+                        x = 5;
+                        </code></pre>
+                    </div>
+                    <div class="columns">
+                        <div class="column is-half">
+                            <div class="block">
+                            <p>As for <strong>let</strong>, these rules follow:
+                            <ul>
+                                <li>
+                                    • Cannot be <strong>redeclared</strong>
+                                </li>
+                                <li>
+                                    • Must be <strong>declared</strong> before use
+                                </li>
+                                <li>
+                                    • Has <strong>block scope</strong>
+                                </li>
+                            </ul>
+                            </p>
+                            </div>
+                        </div>
+                        <div class="column is-half">
+                            <div class="block">
+                            <p>As for <strong>const</strong>, these rules follow:
+                            <ul>
+                                <li>
+                                    • Cannot be <strong>redeclared</strong>
+                                </li>
+                                <li>
+                                    • Cannot be <strong>reassigned</strong>
+                                </li>
+                                <li>
+                                    • Has <strong>block scope</strong>
+                                </li>
+                            </ul>
+                            </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="block">
+                    <p>
+                        You can also utilize hoisting with variables, eg. say x = 5 and declare the variable
+                        <br> later down the code, as JS removes all declariations to the top of the current
+                        <br> scope (of script or function);
+                    </p>
+                    </div>
+                </div>
+                <div class="column is-half">
+                    <figure class="image">
+                        <img class="is-rounded" src="../images/js.jpg">
+                    </figure>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-half">
+                    <div class="block">
+                        <h2 class="subtitle">
+                            <strong>Arrays</strong>
+                        </h2>
+                    </div>
+                    <div class="block">
+                        <p>An array in JS can be declared by:
+                        </p>
+                        <pre><code>
+            const names = ['Steve', 'Brian', 'John'];
+                    </code></pre>
+                    </div>
+
+                    <div class="block">
+                        <strong>Array methods (some of them):</strong>
+
+                        <pre><code>
+            pop(); //removes last element from an array
+            push(); //adds element to array
+            shift(); //removes first index and shifts indexes
+            length(); //length of array
+            concat(arrToMerge); //merges two Arrays
+            splice(); //adds new items to an array
+            slice(); //slices out an item of an array
+            map(); //creates a new array by calling a func. for each element
+            forEach(); //loops through array
+
+                        </code></pre>
+                    </div>
+                    </p>
+                </div>
+                <div class="column is-half">
+                    <div class="block">
+                        <h2 class="subtitle">
+                            <strong>Callback Functions:</strong>
+                        </h2>
+                    </div>
+                    <div class="block">
+                        <p>Function passed as an argument to another function.
+                            <br>Allows a function to call another function.
+                        </p>
+                        <p>Example:</p>
+                    </div>
+                    <div class="block">
+                        <pre><code>
+            const display(string) = () => {
+                document.getElementById('textbox').innerHTML = string;
+            }
+
+            function hello(text1, text2, callback) {
+                let string = text1 + text2;
+                callback(string);
+            }
+
+            hello('John', 'Doe', display);
+                        </code></pre>
+                    </div>
+                    <div class="block">
+                        <p>Arguably, callback functions get a bit more interresting when dealing with asynchronous code.
+                            <br>
+                            This also allowed me to showcase two ways of writing a JS function, either with function or
+                            <br>
+                            ES6 arrow functions.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-half">
+                    <div class="block">
+                        <h2 class="subtitle">
+                            <strong>Datatypes</strong>
+                        </h2>
+                    </div>
+                    <div class="block">
+                        <p>JS variables can contain different types of datatypes, some examples:
+                        </p>
+                    </div>
+                    <div class="block">
+                        <pre><code>
+                        //String
+                        let variable = 'hello';
+                        //Integers
+                        let variable = 11;
+                        //Boolean
+                        const variable = true;
+                        //Objects
+                        const person = {
+                            name: 'John',
+                            age: '25'
+                        };
+                        //Arrays
+                        const numbs = [1, 2]
+                        </code></pre>
+                    </div>
+                    <div class="block">
+                        <p>
+                            Datatypes are important. If they didn't exist, the computer/compiler would not know
+                            <br>
+                            how to interpret adding a string and a number together, eg. it should treat the number
+                            <br>
+                            as a string.
+                            <br>
+                            In JS a variable without a value has the value <strong>undefined</strong>.
+                            <br>
+                            Datatypes in JS are also dynamic.
+                        </p>
+                    </div>
+                </div>
+                <div class="column is-half">
+                    <div class="block">
+                        <h2 class="subtitle">
+                            <strong>Fetch</strong>
+                        </h2>
+                    </div>
+                    <div class="block">
+                        <p>Fetch is used to make HTTP requests, both client and serverside, for Example
+                            <br> node-fetch in Express. Example on fetch below:
+                        </p>
+                    </div>
+                    <div class="block">
+                        <pre><code>
+            fetch('some uri')
+            .then(res => res.json) //converts to json via. res.text() and JSON.parse()
+            .then(data => {
+                //do something with data
+            });
+                        </code></pre>
+                    </div>
+                    <div class="block">
+                        <p>Fetch supports all the other HTTP requests as well and a wide array of
+                            <br>options, all related to HTTP requests.
+                            <br>
+                            These options can be modified by passing in the <strong>options</strong> object.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-half">
+                    <div class="block">
+                        <h2 class="subtitle">
+                            <strong>Loops</strong>
+                        </h2>
+                    </div>
+                    <div class="block">
+                        <p>In JS, we use loops to iterate over arrays, or for example
+                            <br> while loops to run based on a condition.
+                        </p>
+                        <p>A traditional for loop for an array</p>
+                    </div>
+                    <div class="block">
+                        <pre><code>
+            const numbers = [1, 2, 3, 4, 5];
+            
+            for (let i = 0: i < numbers.length; i++) {
+                console.log(numbers[i]);
+            }
+                        </code></pre>
+                    </div>
+                    <div class="block">
+                        <p>
+                            However, a more functional approach is prefered, as per functional programming
+                            <br>
+                            as this produces simpler, safer and more readable code. Also immuteability
+                            <br>
+                            makes our objects more concise and less error-prone.
+                            <br>
+                            <br>
+                            Examples:
+                        </p>
+                    </div>
+                    <div class="block">
+                        <pre><code>
+            const numbers = [1, 2, 3, 4, 5];
+            //Do the same as the for loop
+            numbers.forEach(element => console.log(element));
+            
+            //pass a function to map
+            const map = numbers.map(number => number * 2);
+
+            //filter results
+            const res = numbers.filter(number => number < 2);
+
+                        </code></pre>
+                    </div>
+
+                </div>
+                <div class="column is-half">
+                    <div class="block">
+                        <figure class="image">
+                            <img class="is-rounded" src="../images/js2.jpg">
+                        </figure>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+</div>

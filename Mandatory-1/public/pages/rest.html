@@ -1,0 +1,152 @@
+<div class="pt-5">
+    <section class="section">
+        <div class="container">
+            <h1 class="title">REST Api</h1>
+            <div class="columns">
+                <div class="column is-half">
+                    
+                    <div class="block">
+                        <p>A REST Api is a web API that conforms to the REST architectural style. Thus
+                            <br> there are principles and conventions to be followed for an API to be
+                            <br>a RESTful api.
+                        </p>
+                    </div>
+                    <div class="block">
+                        
+                            <h2 class="subtitle"><strong>Guiding principles of REST</strong></h2>
+                            <p>
+                            <ul>
+                                <li>
+                                    <strong>• Uniform Interface</strong>
+                                    <li>
+                                        &nbsp; • Apply the principles of generality
+                                    </li>
+                                </li>
+                                <li>
+                                   <strong> • Client-Server design pattern</strong>
+                                    <li>
+                                        &nbsp; • Enforces the seperation of concerns, helps client and server evolve independently.
+                                    </li>
+                                </li>
+                                <li>
+                                   <strong> • Stateless</strong>
+                                    <li>
+                                        &nbsp; • Each request from client to server must contain all information neccesary<br> to understand/complete the request.
+                                    </li>
+                                </li>
+                                <li>
+                                    <strong>• Cacheable</strong>
+                                    <li>
+                                        &nbsp; • A response should implicitly or explicitly label itself as cacheable or non-cacheable
+                                    </li>
+                                </li>
+                                <li>
+                                   <strong>• Layered System</strong>
+                                   <li>
+                                    &nbsp; • Architecture should be composed of hierarchical layers by constraining component behavior.
+                                </li>
+                                </li>
+                                <li>
+                                    <strong> • Code on demand (optional)</strong>
+                                    <li>
+                                        &nbsp; • Allows client functionality to extend by downloading and executing code in scripts/applets.
+                                    </li>
+                                </li>
+                            </ul>
+                            </p>
+                            
+                    </div>
+                    <div class="block">
+                        <p>To setup a node project, simply run the command <strong>npm init</strong></p>
+                        </div>
+                </div>
+                <div class="column is-half">
+                    <div class="block">
+                        <figure class="image">
+                            <img class="is-rounded" src="../images/rest.png">
+                        </figure>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2 class="subtitle"><strong>Naming conventions</strong></h1>
+            <div class="columns">
+                <div class="column is-half">
+                    
+                    <div class="block">
+                        <p>REST resources has naming conventions, because it enforces the best design
+                            <br>decisions in the long term, thus helping with longetivity.
+                        </p>
+                    </div>
+                    <div class="block">
+                        
+                           
+                            <p>
+                            <ul>
+                                <li>
+                                    <strong>• Use nouns to represent resources</strong>
+                                    <li>
+                                        &nbsp; • example: http://api.example.com/user-management/users/:id
+                                    </li>
+                                </li>
+                                <li>
+                                   <strong> • Client-Server design pattern</strong>
+                                    <li>
+                                        &nbsp; • Enforces the seperation of concerns, helps client and server evolve independently.
+                                    </li>
+                                </li>
+                                <li>
+                                   <strong> • Document</strong>
+                                    <li>
+                                        &nbsp; • Use 'singular' name to denote document resource archetype.
+                                    </li>
+                                </li>
+                                <li>
+                                    <strong>• Collection</strong>
+                                    <li>
+                                        &nbsp; • Use the plural name to denote the collection resource archetype. eg. Users instead of user.
+                                    </li>
+                                </li>
+                                <li>
+                                   <strong>• Store</strong>
+                                   <li>
+                                    &nbsp; • Use plural name to denote store resource archetype.
+                                    &nbsp; • http://api.example.com/user-management/users/:id/wishlists
+                                </li>
+                                </li>
+                                <li>
+                                    <strong> • Controller</strong>
+                                    <li>
+                                        &nbsp; • Use verb to denote controller archetype, eg. checkout, play etc..
+                                    </li>
+                                </li>
+                            </ul>
+                            </p>
+                         
+                    </div>
+                    <div class="block">
+                        <p>Other than that, theres a couple of more stuff.
+                            <br>Use forward slash, but no forward slash at the end of the URI.
+                            <br>Use hyphens to improve readability.
+                            <br>No underscores.
+                            <br>Lowercase letters are preffered. 
+                            <br>Never use CRUD functionality names in URIs.
+                        </p>
+                        </div>
+                </div>
+                <div class="column is-half">
+                    <div class="block">
+                        <figure class="image">
+                            <span>Example of URI's</span>
+                            <img class="is-rounded" src="../images/api.png">
+                        </figure>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

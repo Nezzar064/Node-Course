@@ -3,49 +3,59 @@
 
 <head>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <link rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/default.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>%%TITLE_PLACEHOLDER%%</title>
 </head>
 
 
-    <div class="container">
-<div class="pt-2 is-flex is-justify-content-flex-start is-rounded">
-    <nav class="navbar box p-2 pl-2 pr-2 is-dark is-rounded" role="navigation" aria-label="main navigation">
-        <div class="navbar-menu">
-            <div class="navbar-start">
-                <a class="navbar-item is-dark">
-                    Home
-                </a>
-                <a class="navbar-item is-dark">
-                    About
-                </a>
-                <div class="navbar-item is-dark has-dropdown is-hoverable">
-                    <a class="navbar-link">
-                        Docs
+        <nav class="breadcrumb is-centered is-medium p-2 is-rounded" role="navigation" aria-label="breadcrumbs">
+            <ul>
+                <li>
+                    <a class="navbar-item is-dark" href="/">
+                        <span class="icon is-small">
+                            <i class="fas fa-home" aria-hidden="true"></i>
+                          </span>
+                        <span>Home</span>
                     </a>
+                </li>
+                <li>
+                    <div class="navbar-item is-dark has-dropdown is-hoverable">
+                        <a class="navbar-link">
+                            <span class="icon is-small">
+                                <i class="fas fa-book" aria-hidden="true"></i>
+                              </span>
+                           <span>Docs</span>
+                        </a>
 
-                    <div class="navbar-dropdown is-dark is-rounded">
-                        <a class="navbar-item">
-                            JavaScript
-                        </a>
-                        <a class="navbar-item">
-                            Node & Nodemon
-                        </a>
-                        <a class="navbar-item">
-                            REST Api
-                        </a>
-                        <a class="navbar-item">
-                            SSR
-                        </a>
-                        <a class="navbar-item">
-                            CLI/UNIX
-                        </a>  
-                    </div>
-                </div>
-            </div>
-    </nav>
-</div>
-</div>
-
+                        <div class="navbar-dropdown is-dark is-rounded">
+                            <a class="navbar-item" href="/docs/javascript">
+                                JavaScript
+                            </a>
+                            <a class="navbar-item" href="/docs/node">
+                                Node & Nodemon
+                            </a>
+                            <a class="navbar-item" href="/docs/REST">
+                                REST Api
+                            </a>
+                            <a class="navbar-item" href="/docs/ssr">
+                                SSR
+                            </a>
+                            <a class="navbar-item" href="/docs/unix">
+                                CLI/UNIX
+                            </a>
+                            <a class="navbar-item" href="/docs/cc">
+                                Clean Code
+                            </a>
+                        </div>
+                </li>
+            </ul>
+        </nav>
+  
 <body>

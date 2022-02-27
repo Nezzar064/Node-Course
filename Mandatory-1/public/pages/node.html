@@ -1,0 +1,288 @@
+<div class="pt-5">
+    <section class="section">
+        <div class="container">
+            <h1 class="title">Node.js</h1>
+            <div class="columns">
+                <div class="column is-half">
+                    <div class="block">
+                        <h2 class="subtitle">
+                            <strong>About:</strong>
+                        </h2>
+                    </div>
+                    <div class="block">
+                        <p>Node.js is an asynchronous event-driven JavaScript runtime. It is designed to
+                            <br> build scalable network applications via. the express framework.
+                            <br> <br> Example of an express app from nodejs.org:
+                        </p>
+                    </div>
+                    <div class="block">
+                        <pre><code>
+            const http = require('http');
+
+            const hostname = '127.0.0.1';
+            const port = 3000;
+
+            const server = http.createServer((req, res) => {
+                res.statusCode = 200;
+                res.setHeader('Content-Type', 'text/plain');
+                res.end('Hello World');
+            });
+
+            server.listen(port, hostname, () => {
+               console.log(`Server running at http://${hostname}:${port}/`);
+            });
+                        </code></pre>
+                    </div>
+                    <div class="block">
+                        <p>To setup a node project, simply run the command <strong>npm init</strong></p>
+                        </div>
+                </div>
+                <div class="column is-half">
+                    <div class="block">
+                        <figure class="image">
+                            <img class="is-rounded" src="../images/node.png">
+                        </figure>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-half">
+                    <div class="block">
+                        <h2 class="subtitle">
+                            <strong>Server.js / App.js:</strong>
+                        </h2>
+                    </div>
+                    <div class="block">
+
+                        <p>App.js / Server.js is our applications entry-point, which is where the root
+                            <br> of our express app lies. Here we set up the initial configuration for
+                            <br> our app, eg. stuff like content type, port, routes(endpoints) to use etc.
+                            <br><br>
+                            Example:
+                        </p>
+                    </div>
+                    <div class="block">
+
+                        <pre><code>
+            const express = require('express');
+
+            const app = express();
+            
+            // JSON content type
+            app.use(express.json());
+
+            app.use(express.urlencoded({extended: true}));
+            
+            //use router configured in standalone file
+            require('./src/routes/beers.route')(app);
+
+            //can also configure endpoints in this file though.
+
+            // set port
+            const PORT = process.env.SERVER_PORT || 8080;
+            app.listen(PORT, () => {
+                console.log(`Server running on port ${PORT}.`);
+            });
+                    </code></pre>
+                    </div>
+
+                    <div class="block">
+                        <p>
+                            To run our application, we can either do the command:
+                            <br>
+                            <strong>node server.js</strong>
+                            <br>
+                            <br>
+                            Or use npm and setup a start script that executes the same command.
+                        </p>
+                    </div>
+                </div>
+                <div class="column is-half">
+                    <div class="block">
+                        <h2 class="subtitle">
+                            <strong>Nodemon:</strong>
+                        </h2>
+                    </div>
+                    <div class="block">
+
+                    <p>Nodemon is a tool that helps develop node.js based applications by giving us the
+                        <br>HMR (hot module reload) feature. This basically just means that every time we
+                        <br>save our file, the server restarts.
+                        <br>It's basically a wrapper for node.
+                    </p>
+                    </div>
+                    <div class="block">
+                     <p>How to use?</p>
+                    <pre><code>
+            //Install via npm
+            npm install -g nodemon 
+
+            //Configure start script in package.json
+            "start": "nodemon -r server.js",
+
+            //Can also configure a nodemon.json file that
+            //tells nodemon what files to look after
+            {
+                "ext": "js, json, mjs, html"
+            }
+
+                        </code></pre>
+                    </div>
+                    <div class="block">
+
+                    <p>Arguably, it's a very easy tool to setup and use, thus offering a lot of value for
+                        <br> minimal effort.
+                    </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-half">
+                    <div class="block">
+                        <h2 class="subtitle">
+                            <strong>package.json</strong>
+                        </h2>
+                    </div>
+                    <div class="block">
+                        <p>package.json is the heart of a Node project. It defines functional attributes
+                            <br>of a project that npm uses to install dependencies, run scripts 
+                            <br>for example our nodemon script, and identify the entry-point (app.js/server.js)
+                        </p>
+                    </div>
+                    <div class="block">
+                        <pre><code>
+            //Example package.json for this project
+        {
+            "name": "mandatory-1",
+            "version": "1.0.0",
+            "description": "",
+            "main": "server.js",
+            "scripts": {
+                "test": "echo \"Error: no test specified\" && exit 1",
+                "start": "nodemon -r dotenv/config server.js"
+            },
+            "author": "nezzar064",
+            "license": "ISC",
+            "dependencies": {
+                "dotenv": "^16.0.0",
+                "express": "^4.17.3",
+                "jshint": "^2.13.4",
+                "nodemon": "^2.0.15"
+            }
+        }                
+                        </code></pre>
+                    </div>
+                    <div class="block">
+                        <p>
+                           package.json is written in JSON format.
+                        </p>
+                    </div>
+                </div>
+                <div class="column is-half">
+                    <div class="block">
+                        <h2 class="subtitle">
+                            <strong>Sending data in Node.js</strong>
+                        </h2>
+                    </div>
+                    <div class="block">
+                        <p>To send data in node, we either use a router. As mentioned earlier, it can be done
+                            <br>in multiple ways. Here I'll show it with the router in its own file way.
+                        </p>
+                    </div>
+                    <div class="block">
+                        <pre><code>
+                //Define router
+            module.exports = app => {
+                const client = require('../controllers/client.controller.js');
+                const router = require('express').Router();    
+                                
+                router.get('/', client.home);
+                router.get('/docs/:category', client.docs);
+                            
+                app.use('', router);
+            };
+
+                //Define controller
+            exports.home = (req, res) => {
+                res.send(readPage('./public/pages/home.html', 'Home'));
+            };
+                
+            exports.docs = (req, res) => {
+                res.send(readPage('./public/pages/docs.html', 'Docs'));
+            };
+
+                //Use router in server.js
+            require('./src/routes/client.route')(app);
+
+                        </code></pre>
+                    </div>
+                    <div class="block">
+                        <p>Thus now we have the endpoints / and /docs/:category available, where category
+                            <br>is a parameter. The req object has everything related to requests, eg.
+                            <br>we can access that parameter by calling <strong>req.params.category</strong>
+                            <br>and res controls our response, where we can send files, JSON, set status etc.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-half">
+                    <div class="block">
+                        <h2 class="subtitle">
+                            <strong>Importing in Node.js</strong>
+                        </h2>
+                    </div>
+                    <div class="block">
+                        <p>Node.js uses the CJS (commonJs) way of importing, different to ESM importing.
+                            <br>The CJS way refers to exporting via. modules maintained by node.
+                        </p>
+                    </div>
+                    <div class="block">
+                        <pre><code>
+                //Import and export the ESM way:
+            import * as from ('./api');
+            export default api
+            export function get...
+                
+                //Import and export the CJS way:
+            const fetch = require('node-fetch');
+            
+            exports.create = (req, res) => {
+            };
+
+            module.exports = app => {
+            };
+                        </code></pre>
+                    </div>
+                    <div class="block">
+                        <p>
+                            As you can see, there is a little difference between the two of them.
+                        </p>
+                    </div>
+                </div>
+                <div class="column is-half">
+                    <div class="block">
+                        <figure class="image">
+                            <img class="is-rounded" src="../images/js2.jpg">
+                        </figure>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+</div>

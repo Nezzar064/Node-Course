@@ -3,6 +3,7 @@ module.exports = app => {
     const router = require('express').Router();    
     
     router.get('/', client.home);
+    router.get('/docs/:category', client.docs);
 
     app.use('', router);
 };
