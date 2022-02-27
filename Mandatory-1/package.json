@@ -10,8 +10,6 @@
   "author": "nezzar064",
   "license": "ISC",
   "dependencies": {
-    "autoprefixer": "^10.4.2",
-    "daisyui": "^2.2.0",
     "dotenv": "^16.0.0",
     "express": "^4.17.3",
     "jshint": "^2.13.4",
