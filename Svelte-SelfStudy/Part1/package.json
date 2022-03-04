@@ -1,0 +1,17 @@
+{
+  "name": "4.-svelte-selfstudy",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "svelte-kit dev",
+    "build": "svelte-kit build",
+    "package": "svelte-kit package",
+    "preview": "svelte-kit preview"
+  },
+  "devDependencies": {
+    "@sveltejs/adapter-auto": "next",
+    "@sveltejs/kit": "next",
+    "svelte": "^3.46.0"
+  },
+  "type": "module",
+  "dependencies": {}
+}
