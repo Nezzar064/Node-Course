@@ -1,1 +1,0 @@
-<p>Test to see that component isnt affected by style in parent</p>
