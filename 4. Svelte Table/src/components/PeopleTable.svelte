@@ -22,7 +22,7 @@
         }
 
         return tableData;
-    }
+    };
 
     let tableData = generateData(20);
 </script>

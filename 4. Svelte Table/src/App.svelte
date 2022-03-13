@@ -1,5 +1,6 @@
 <script>
 	import PeopleTable from "./components/PeopleTable.svelte";
+	import LibraryTable from "./components/LibraryTable.svelte";
 </script>
 
 <head>
@@ -16,5 +17,10 @@
 	<div class="container">
 		<h1 class="title">Persons</h1>
 		<PeopleTable />
+		<br>
+		<br>
+		<br>
+		<h1 class="title">Svelte Simple Datatables</h1>
+		<LibraryTable />
 	</div>
 </body>
